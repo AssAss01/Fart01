@@ -1,13 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
-  return (
+  const audio = new Audio("Recording.m4a");
+
+  const playSound = () => {
+      audio.play()
+  
+  }
+   return
+  
+  (
     <View style={styles.container}>
-      <Text>Sup Nigga!</Text>
+      <Text>Fart Activated!</Text>
       <StatusBar style="auto" />
-    </View>
+      <TouchableOpacity
+        onPress={playSound}
+      >
+        <Image
+        style={styles.stretch}
+        source={require('./assets/fatasspic.jpg')}
+      />
+      </TouchableOpacity> 
+      </View>
   );
 }
 
@@ -18,4 +34,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  stretch: {
+    width: 50,
+    height: 200,
+    resizeMode: 'stretch',
+  },
 });
+
